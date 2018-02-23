@@ -1,0 +1,25 @@
+/* CSS declarations go here */
+// @import "{}/node_modules/normalize.scss/normalize.scss";
+
+.page.loader {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(/img/loaders/blue_circle.gif);
+  background-image: url(/img/loaders/blue_circle.svg), none;
+  background-repeat: no-repeat;
+  background-position: center 30%;
+}
+
+.page {
+
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+    }
+
+}
