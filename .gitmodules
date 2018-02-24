@@ -1,0 +1,3 @@
+[submodule "modules/frontend"]
+	path = modules/frontend
+	url = https://github.com/spiny/frontend.git
