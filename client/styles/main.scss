@@ -1,6 +1,11 @@
 /* CSS declarations go here */
 // @import "{}/node_modules/normalize.scss/normalize.scss";
 
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
 .page.loader {
   position: absolute;
   top: 0px;
@@ -14,10 +19,13 @@
 }
 
 .page {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+  width: 100vw;
+  min-height: 100vh;
 
-    &.hidden {
-      opacity: 0;
-    }
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+  }
 }

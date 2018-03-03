@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 // MUI
-import Reboot from 'material-ui/Reboot';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -10,7 +9,9 @@ import Typography from 'material-ui/Typography';
 // Colors
 import { red } from 'material-ui/colors';
 
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
+
+import AbstractLayout from '/client/imports/layouts/AbstractLayout';
 
 
 const styles = {
@@ -29,31 +30,25 @@ const styles = {
   }
 };
 
-class ErrorLayout extends Component {
-  render() {
+class ErrorLayout extends AbstractLayout {
+  renderContent() {
     const { classes, content, contentProps = {} } = this.props;
     const Content = content;
 
-    const userLocale = 'en';
-    const translationsForUsersLocale = {};
-
     return (
-      <IntlProvider locale={ userLocale } messages={ translationsForUsersLocale }>
-        <div className={ classes.root }>
-          <Reboot />
-          <AppBar position="static" className={ classes.appBar }>
-            <Toolbar>
-              <Typography variant="title" className={ classes.appBarContent }>
-                <FormattedMessage id='error.title' defaultMessage='Error' />
-              </Typography>
-            </Toolbar>
-          </AppBar>
+      <div className={ classes.root }>
+        <AppBar position="static" className={ classes.appBar }>
+          <Toolbar>
+            <Typography variant="title" className={ classes.appBarContent }>
+              <FormattedMessage id='error.title' defaultMessage='Error' />
+            </Typography>
+          </Toolbar>
+        </AppBar>
 
-          <Paper className={ classes.content } elevation={4}>
-            <Content { ...contentProps } />
-          </Paper>
-        </div>
-      </IntlProvider>
+        <Paper className={ classes.content } elevation={4}>
+          <Content { ...contentProps } />
+        </Paper>
+      </div>
     );
   }
 }
