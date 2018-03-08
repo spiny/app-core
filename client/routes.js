@@ -4,8 +4,7 @@ import { mountLayout, showLayout } from '/client/mount';
 import asyncLoader, { importDefault } from '/client/async-loader';
 
 
-//FlowRouter.wait();
-//FlowRouter.initialize();
+FlowRouter.wait();
 
 
 FlowRouter.notFound = {
@@ -44,4 +43,10 @@ FlowRouter.route('/unauthorized', {
       });
     });
   }
+});
+
+
+
+Meteor.startup(() => {
+  FlowRouter.initialize();
 });

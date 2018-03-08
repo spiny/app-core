@@ -1,1 +1,3 @@
+.deploy/*.js
+.deploy/*.json
 node_modules/

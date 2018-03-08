@@ -1,4 +1,6 @@
+import { Meteor } from 'meteor/meteor';
 import { mount, withOptions } from 'react-mounter';
+import $ from 'jquery';
 
 export const mountLayout = withOptions({
     rootId: 'layout',
